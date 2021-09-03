@@ -1,0 +1,18 @@
+let valueEl = Number(document.querySelector('#value').textContent)
+
+let counterValue = document.querySelector('#value')
+
+const decrement = document.querySelector('#counter').firstElementChild
+const increment = document.querySelector('#counter').lastElementChild
+
+increment.addEventListener('click', (el) => {
+  valueEl += 1
+
+  counterValue.innerText = valueEl
+})
+
+decrement.addEventListener('click', (el) => {
+  valueEl -= 1
+
+  counterValue.innerText = valueEl
+})
