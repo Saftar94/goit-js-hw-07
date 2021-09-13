@@ -14,14 +14,10 @@ const ingredients = [
 
 let elemUl = document.querySelector('#ingredients')
 
-const addLi = ingredients.forEach((ingredient) => {
-  const itemLi = document.createElement('li')
-  elemUl.append(itemLi)
-  itemLi.innerHTML = ingredient
-
-  console.log(itemLi)
-})
-
-// ==========
-// как я могу вывести в консоль просто имена???
-// Я уже все перепробовал только LI выходит
+const addLi = (ingredient) =>
+  ingredient.map((el) => {
+    const itemLi = document.createElement('li')
+    itemLi.textContent = el
+    return itemLi
+  })
+elemUl.append(...addLi(ingredients))
