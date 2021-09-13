@@ -6,19 +6,23 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ]
-// const elemUl = document.querySelector('#endregion')
+// const elemUl = document.querySelector('#ingredients')
 // const addLi = ingredients.reduce((str, value) => str + `<li>${value}</li> `, '')
 // console.log(addLi)
 
 // elemUl.innerHTML = addLi
 
-let elemUl = document.querySelector('#ingredients')
+const elemUl = document.querySelector('#ingredients')
 
-const addLi = ingredients.map((ingredient) => {
-  const itemLi = document.createElement('li')
-  itemLi.textContent = ingredient
-  console.log(ingredient)
+const creatListOfIngredients = (elemet) => {
+  const addLi = elemet.map((el) => {
+    const itemEl = document.createElement('li')
+    itemEl.textContent = el
+
+    return itemEl
+  })
   return addLi
-})
+}
+const elements = creatListOfIngredients(ingredients)
 
-elemUl.append(...addLi)
+elemUl.append(...elements)
