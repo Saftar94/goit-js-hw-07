@@ -18,20 +18,9 @@ const images = [
 
 const imgEl = document.querySelector('#gallery')
 
-// images.forEach((el) => {
-//   imgEl.insertAdjacentHTML(
-//     'afterbegin',
-//     `<li><img src="${el.url}" alt="${el.alt}"  width = "100" height = "100"></li>`,
-//   )
-// })
-
-const listFoto = ({ url, alt }) => {
-  return `<li>
-   <img src="${url}" alt="${alt}" width = "100" height = "100">
-   </li>`
-}
-
-const listulfoto = images.map(listFoto).join('')
-console.log(listulfoto)
-
-imgEl.insertAdjacentHTML('afterbegin', listulfoto)
+images.forEach((el) => {
+  imgEl.insertAdjacentHTML(
+    'afterbegin',
+    `<li><img src="${el.url}" alt="${el.alt}"  width = "100" height = "100"></li>`,
+  )
+})
